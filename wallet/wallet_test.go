@@ -14,6 +14,7 @@ func assertBalance(t *testing.T, w *Wallet, want Bitcoin) {
 func assertError(t *testing.T, err error, want error) {
 	t.Helper()
 	if err == nil {
+		// Use fatal to stop any further tests
 		t.Fatal("wanted an error, got none")
 	}
 
