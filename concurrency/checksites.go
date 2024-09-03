@@ -21,6 +21,7 @@ func CheckWebsites(wc WebsiteChecker, urls []string) map[string]bool {
 
 	// Read results from same channel into map
 	for i := 0; i < len(urls); i++ {
+		// This is a blocking call
 		r := <-resultChannel
 		results[r.string] = r.bool
 	}
